@@ -8,7 +8,8 @@
 //   LIST_OF_ENV_VARS_TO_SET
 //
 // Commands:
-//   hubot <how many days until MM/dd/yyyy> - <X days until MM/dd/yyyy>
+//   hubot how long until <date> - X days until <date>
+//   hubot show custom dates
 //
 // Notes:
 //   <optional notes required for the script>
@@ -30,7 +31,7 @@ module.exports = function (robot) {
     if (customEvents[query.toLowerCase()] != undefined){
       date = customEvents[query.toLowerCase()];
     }
-    if (date.isValid() && date.toNow(true) !== 'a few seconds'){
+    if (date.isValid()){
       var duration = date.toNow(true);
       res.reply(duration + ' until '+ date.format('MMM DD, YYYY'));
     } else {
