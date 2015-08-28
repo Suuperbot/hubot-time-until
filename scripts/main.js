@@ -19,15 +19,17 @@
 var moment = require('moment');
 module.exports = function (robot) {
 
+  var dateFormat = 'MM/DD/YYYY';
+
   var customEvents = {
-    'adams wedding': moment('09/05/2015'),
-    'slalom holiday party': moment('12/12/2015')
+    'adams wedding': moment('09/05/2015', dateFormat),
+    'slalom holiday party': moment('12/12/2015', dateFormat)
   };
 
-  robot.respond(/how long until (.+)(\?*)/i, function (res) {
+  robot.respond(/how long until (.+)/i, function (res) {
     var query = res.match[1];
 
-    var date = moment();
+    var date = moment(query, dateFormat);
     if (customEvents[query.toLowerCase()] != undefined){
       date = customEvents[query.toLowerCase()];
     }
