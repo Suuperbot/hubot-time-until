@@ -18,7 +18,7 @@
 var moment = require('moment');
 module.exports = function (robot) {
 
-  robot.respond(/how many days until (.+)(\?*)/i, function (res) {
+  robot.respond(/how long until (.+)(\?*)/i, function (res) {
     var now = moment();
     var query = moment(res.match[1]);
     if (query.isValid()){
