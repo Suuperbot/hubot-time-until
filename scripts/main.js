@@ -16,6 +16,7 @@
 //
 // Author:
 //   <github username of the original script author>
+var moment = require('moment');
 module.exports = function (robot) {
   ////
   // EXAMPLES
@@ -27,7 +28,7 @@ module.exports = function (robot) {
   // directed at Hubot.
   robot.hear(/orly/i, function (res) {
     // `send` will simply post this message back to chat
-    res.send('yarly');
+    res.send('> '+ moment());
   });
 
   // The `respond` callback will only match if Hubot is mentioned at the start

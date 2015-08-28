@@ -1,4 +1,4 @@
-# skibot-time-until
+# hubot-time-until
 
 Get the number of days until a date
 

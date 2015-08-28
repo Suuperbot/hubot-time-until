@@ -1,5 +1,5 @@
 {
-  "name": "skibot-time-until",
+  "name": "hubot-time-until",
   "version": "1.0.0",
   "description": "Get the number of days until a date",
   "main": "index.js",
@@ -14,5 +14,8 @@
   "devDependencies": {
     "coffee-script": "^1.9.3",
     "hubot": "^2.16.0"
+  },
+  "dependencies": {
+    "moment": "^2.10.6"
   }
 }
