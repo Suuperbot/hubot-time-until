@@ -19,10 +19,9 @@ var moment = require('moment');
 module.exports = function (robot) {
 
   robot.respond(/how long until (.+)(\?*)/i, function (res) {
-    var now = moment();
     var query = moment(res.match[1]);
     if (query.isValid()){
-      var duration = now.to(query, true);
+      var duration = query.toNow(true);
       res.reply(duration + ' until '+ query.format('MMM DD, YYYY'));
     } else {
       res.reply('Are you sure that\'s a real date?');
