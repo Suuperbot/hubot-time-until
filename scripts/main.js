@@ -18,14 +18,28 @@
 var moment = require('moment');
 module.exports = function (robot) {
 
+  var customEvents = {
+    'adams wedding': moment('09/05/2015'),
+    'slalom holiday party': moment('12/12/2015')
+  };
+
   robot.respond(/how long until (.+)(\?*)/i, function (res) {
-    var query = moment(res.match[1]);
-    if (query.isValid()){
-      var duration = query.toNow(true);
-      res.reply(duration + ' until '+ query.format('MMM DD, YYYY'));
+    var query = res.match[1];
+
+    var date = moment();
+    if (customEvents[query.toLowerCase()] != undefined){
+      date = customEvents[query.toLowerCase()];
+    }
+    if (date.isValid() && date.toNow(true) !== 'a few seconds'){
+      var duration = date.toNow(true);
+      res.reply(duration + ' until '+ date.format('MMM DD, YYYY'));
     } else {
       res.reply('Are you sure that\'s a real date?');
     }
+  });
+
+  robot.respond(/show custom dates/i, function (res) {
+    res.reply(JSON.stringify(customEvents));
   });
 
 };
