@@ -2,20 +2,16 @@
 //   Get the number of days until a date
 //
 // Dependencies:
-//   "<moment>": "<2.10.6>"
-//
-// Configuration:
-//   LIST_OF_ENV_VARS_TO_SET
+//   "moment": "2.10.6"
 //
 // Commands:
-//   hubot how long until <date> - X days until <date>
-//   hubot show custom dates
-//
-// Notes:
-//   <optional notes required for the script>
+//   hubot show custom dates - Display saved dates from brain
+//   hubot how long until <MM/DD/YYYY> - Calculate time until specified date
+//   hubot how long until <MM/DD/YYYY> --save <EventName> - Calculate time until specified date and save <EventName>
+//   hubut how long until <EventName> - Calculate time until specified <EventName>
 //
 // Author:
-//   <adamsdropbox>
+//   adamsdropbox
 var moment = require('moment');
 module.exports = function (robot) {
 
