@@ -12,7 +12,7 @@
     "hubot-scripts"
   ],
   "devDependencies": {
-    "coffee-script": "^1.9.3",
+    "coffee-script": "^1.12.4",
     "hubot": "^2.16.0"
   },
   "dependencies": {
