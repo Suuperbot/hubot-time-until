@@ -13,7 +13,7 @@
   ],
   "devDependencies": {
     "coffee-script": "^1.9.3",
-    "hubot": "^2.16.0"
+    "hubot": "^3.3.2"
   },
   "dependencies": {
     "moment": "^2.10.6"
